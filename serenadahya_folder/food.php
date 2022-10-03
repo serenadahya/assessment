@@ -21,6 +21,39 @@ $food_result = mysqli_query($dbcon, $food_query);
 $this_food_query = "SELECT * FROM food WHERE food.food_id = '" .$food_id . "'";
 $this_food_result = mysqli_query($dbcon, $this_food_query);
 $this_food_record = mysqli_fetch_assoc($this_food_result);
+
+// Sort Query
+$sort_query = "SELECT sort_id, sort FROM sort";
+$sort_result = mysqli_query($dbcon, $sort_query);
+
+
+if(isset($_GET['sort_sel'])) {
+        $sort_id = $_GET['sort_sel'];
+    } else {
+        $sort_id = 1;
+    }
+
+// Sorts the Food Dropdown Menu
+if($sort_id == 1) {
+	$food_query = "SELECT food_id, food FROM food ORDER BY food ASC";
+	$food_result = mysqli_query($dbcon, $food_query);
+} elseif($sort_id == 2) {
+	$food_query = "SELECT food_id, food FROM food ORDER BY food DESC";
+	$food_result = mysqli_query($dbcon, $food_query);
+} elseif($sort_id == 3) {
+	$food_query = "SELECT food_id, food FROM food ORDER BY cost ASC";
+	$food_result = mysqli_query($dbcon, $food_query);
+} elseif($sort_id == 4) {
+	$food_query = "SELECT food_id, food FROM food ORDER BY cost DESC";
+	$food_result = mysqli_query($dbcon, $food_query);
+} elseif($sort_id == 5) {
+	$food_query = "SELECT food_id, food FROM food ORDER BY calories ASC";
+	$food_result = mysqli_query($dbcon, $food_query);
+} elseif($sort_id == 6) {
+	$food_query = "SELECT food_id, food FROM food ORDER BY calories DESC";
+	$food_result = mysqli_query($dbcon, $food_query);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +80,28 @@ $this_food_record = mysqli_fetch_assoc($this_food_result);
 			<p>There are many avaliable items of food avaliable from the Wellington East Girls College including many differnet hot foods, cold foods and baking goods.</p>
 			
 			<div id="column1">
+				
+				<!-- Dropdown Sort Form -->
+				<form name='sort_form' id='sort_form' method='get' action='food.php'>
+					<label for="sort_by">Sort By: </label>
+					<!-- Dropdown Menu -->
+					<select name='sort_sel' id='sort_sel'>
+						<!-- Options -->
+						<?php
+						/* Display the query results in an option tag */
+						while($sort_record = mysqli_fetch_assoc($sort_result)){
+							echo "<option value ='".$sort_record['sort_id']."'>";
+							echo $sort_record['sort'];
+							echo "</option>";
+						}
+						?>
+					</select>
+					<!--- Sort Button -->
+					<input type="submit" name="sort_button" id="sort_button" value="Sort Items">
+				</form>
+			
+				<br><br>
+				
 				<!-- Dropdown Food Form -->
 				<form name='food_form' id='food_form' method='get' action='food.php'>
 					<!-- Dropdown Menu -->
