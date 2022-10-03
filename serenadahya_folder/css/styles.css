@@ -58,6 +58,18 @@ article {
 	overflow: auto;
 }
 
+#column1 {
+	padding: 20px;
+	width: 40%;
+	float: left;
+}
+
+#column2 {
+	padding: 20px;
+	width: 40%;
+	float: right;
+}
+
 a {
 	text-decoration: none;
 	color: black;

@@ -6,6 +6,18 @@ if($dbcon == NULL) {
 	exit();
 }
 
+//Showing information from selected food_id
+  if(isset($_GET['food_sel'])) {
+        $food_id = $_GET['food_sel'];
+    } else {
+        $food_id = 1;
+    }
+
+// Display Food Information Query
+$this_food_query = "SELECT * FROM food WHERE food.food_id = '" .$food_id . "'";
+$this_food_result = mysqli_query($dbcon, $this_food_query);
+$this_food_record = mysqli_fetch_assoc($this_food_result);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +40,15 @@ if($dbcon == NULL) {
 			<h1>Wellington East Girls College Cafe</h1>
 		</header>
 		<article>
+			<!-- Displays the food information -->
+			<?php
+				echo "<h3>" .$this_food_record['food']. "</h3>";
+				echo "<p> Food Name: " . $this_food_record['food'] . "<br>";
+				echo "<p> Cost: $" . $this_food_record['cost'] . "<br>";
+				echo "<p> Calories: " .$this_food_record['calories'] . "<br>";
+				echo "<p> Vegetarian: " .$this_food_record['vegetarian'] . "<br>";
+				echo "<p> Category: " .$this_food_record['sweet_savoury'] . "<br>";
+			?>					
 		</article>
 		<footer>
 			<p>&copy; Serena Dahya</p>
