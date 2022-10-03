@@ -1,0 +1,72 @@
+ @import url("https://use.typekit.net/lhb7yts.css");
+
+nav,
+header,
+article,
+footer {
+	display: block;
+	font-family: muli, sans-serif;
+}
+
+body {
+	background-color: LightBlue;
+	font-size: 16px;
+	background-repeat: no-repeat;
+	background-size: 100%
+}
+
+nav {
+	padding: 20px;
+	font-size: 18px;
+	background-color: yellow;
+	overflow: hidden;
+	color: white;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+
+}
+
+nav ul li {
+	list-style: none;
+	margin: 0 25px 0 0;
+	padding: 0;
+	float: left;
+	font-size: 18px;
+}
+
+header {
+	background-color: DarkBlue;
+	padding: 100px 20px 200px 20px;
+	text-align: center;
+	position: relative;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+article {
+	background-color: LightGray;
+	width: 60%;
+	padding: 30px 70px;
+	margin: auto;
+	overflow: auto;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+footer {
+	background-color: yellow;
+	padding: 7px;
+	text-align: center;
+	overflow: auto;
+	font-size: 14px;
+}
