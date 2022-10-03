@@ -93,6 +93,7 @@ $drink_record = mysqli_fetch_assoc($drink_result);
 		</article>
 		<footer>
 			<p>&copy; Serena Dahya</p>
+			<p>Header image from https://unsplash.com/photos/MHNjEBeLTgw - Unsplash Images free to use.</p>
 		</footer>
 	</body>
 </html>

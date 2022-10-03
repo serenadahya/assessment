@@ -9,7 +9,7 @@ footer {
 }
 
 body {
-	background-color: LightBlue;
+	background-color: #094a9a;
 	font-size: 16px;
 	background-repeat: no-repeat;
 	background-size: 100%
@@ -18,7 +18,7 @@ body {
 nav {
 	padding: 20px;
 	font-size: 18px;
-	background-color: yellow;
+	background-color: #FFC000;
 	overflow: hidden;
 	color: white;
 }
@@ -40,9 +40,12 @@ nav ul li {
 }
 
 header {
-	background-color: DarkBlue;
+	background-image: url(https://images.unsplash.com/photo-1536514498073-50e69d39c6cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80); /* adds in an image to the background */
+	background-color: #094a9a;
 	padding: 100px 20px 200px 20px;
 	text-align: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
 	position: relative;
 }
 
@@ -51,23 +54,26 @@ h1 {
 }
 
 article {
-	background-color: LightGray;
+	background-color: #D3D3D3;
 	width: 60%;
 	padding: 30px 70px;
 	margin: auto;
 	overflow: auto;
 }
 
+/* makes the coloumns so that they sit next to eachother */
 #column1 {
 	padding: 20px;
 	width: 40%;
 	float: left;
+	border: 3px solid #094a9a;
 }
 
 #column2 {
 	padding: 20px;
 	width: 40%;
 	float: right;
+	border: 3px solid #094a9a;
 }
 
 a {
@@ -75,8 +81,27 @@ a {
 	color: black;
 }
 
+#homeimg {
+	width: 100%;
+}
+
+#sort_form {
+	float: right;
+}
+
+#sort_sel,
+#sort_button {
+	font-size: 10px;
+}
+
+/* changed the design of the dropdown menu buttons */
+input {
+    background: #FFC000;
+    border: 1.5px solid #094a9a;
+}
+
 footer {
-	background-color: yellow;
+	background-color: #FFC000;
 	padding: 7px;
 	text-align: center;
 	overflow: auto;

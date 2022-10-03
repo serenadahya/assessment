@@ -131,6 +131,7 @@ if($sort_id == 1) {
 		</article>
 		<footer>
 			<p>&copy; Serena Dahya</p>
+			<p>Header image from https://unsplash.com/photos/MHNjEBeLTgw - Unsplash Images free to use.</p>
 		</footer>
 	</body>
 </html>
